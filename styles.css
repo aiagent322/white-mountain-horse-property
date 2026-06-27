@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════
-   WickenburgHorseProperty.com — Styles
+   WhiteMountainHorseProperty.com — Styles
    Mobile-first, 320px minimum
    Georgia serif throughout — magazine publication standard
 ═══════════════════════════════════════════════════════════ */
@@ -132,6 +132,8 @@ a:focus-visible, button:focus-visible { outline: 3px solid #C8A96E; outline-offs
 ════════════════════════════════════════ */
 /* Skip-nav landing: clear sticky nav height */
 #main-content { scroll-margin-top: 50px; }
+/* Anchor targets within page — clear sticky nav */
+[id] { scroll-margin-top: 54px; }
 .hp-wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; font-family: Georgia, serif; line-height: 1.7; }
 .hp-rule { border: none; border-top: 1px solid #e8e0d8; margin: 0; }
 
@@ -371,6 +373,11 @@ h2.related-heading + ul { margin-top: 10px; }
   .stat-label { font-size: .65rem; }
   /* Buy-sell consistent with other 641px breakpoints */
   .buy-sell-grid { grid-template-columns: 1fr 1fr; }
+  /* Hero sub slightly larger at tablet */
+  .hp-hero-sub { font-size: 1.2rem; }
+  /* Inner page headings breathe more at tablet */
+  .page-main h1 { font-size: 1.9em; }
+  .page-main h2 { font-size: 1.4em; }
   .buy-sell-card { padding: 18px; }
   .buy-sell-cta { width: auto; align-self: flex-start; }
   /* Network footer 2-col at tablet */
@@ -389,7 +396,7 @@ h2.related-heading + ul { margin-top: 10px; }
   /* 3-col corridors */
   .corridor-grid { grid-template-columns: 1fr 1fr 1fr; }
   /* Richer hover on desktop — transition consolidated */
-  .corridor-card { transition: border-color .15s, box-shadow .15s, transform .15s; }
+  .corridor-card { transition: border-color .15s, box-shadow .15s, transform .15s; will-change: auto; }
   .corridor-card:hover { border-color: #8b5e3c; box-shadow: 0 4px 16px rgba(139,94,60,.14); transform: translateY(-1px); will-change: transform; }
   /* 3-col services */
   .services-grid { grid-template-columns: 1fr 1fr 1fr; }
@@ -400,6 +407,11 @@ h2.related-heading + ul { margin-top: 10px; }
   .network-footer-cta { max-width: 900px; margin-left: auto; margin-right: auto; }
   /* Buy-sell CTA min-width on desktop */
   .buy-sell-cta { min-width: 180px; }
+  /* Inner page heading hierarchy at desktop */
+  .page-main h1 { font-size: 2.1em; }
+  .page-main h2 { font-size: 1.45em; }
+  /* Hotel/park cards more breathing room at desktop */
+  .hotel-card { padding: 22px 26px !important; }
   /* Wider stat bar breathing room */
   .stat-item { padding: 16px 14px; }
   .stat-number { font-size: 1.15rem; }
@@ -488,6 +500,12 @@ h2.related-heading + ul { margin-top: 10px; }
 
   /* Article list on mobile */
   .article-item { flex-direction: column; gap: 2px; }
+
+  /* Jump nav / quick-links — smaller text on narrow screens */
+  .trail-quick-links { font-size: .82rem; padding: 12px 14px !important; }
+
+  /* Hotel/park cards — tighten padding on mobile */
+  .hotel-card { padding: 14px 14px !important; }
 }
 
 /* ════════════════════════════════════════
@@ -509,6 +527,7 @@ h2.related-heading + ul { margin-top: 10px; }
 @media (max-width: 360px) {
   .hp-hero-wrap { height: 280px; }
   .hp-hero-title { font-size: 1.5rem; }
+  .hp-hero-sub { font-size: .95rem; }
   .corridor-badge { display: none; }
   .network-footer-grid { grid-template-columns: 1fr; }
 }
@@ -533,6 +552,8 @@ h2.related-heading + ul { margin-top: 10px; }
 
 /* Make .page-main the overflow context so bleed works cleanly */
 .page-main { overflow: visible; }
+.page-main table { max-width: 100%; }
+.page-main > table { overflow-x: auto; display: block; }
 
 .page-hero {
   /* Bleed edge-to-edge past .page-main padding */
@@ -871,7 +892,7 @@ h2.related-heading + ul { margin-top: 10px; }
 
   /* Publisher attribution at top */
   .page-main::before {
-    content: "WickenburgHorseProperty.com — Published by Bridle & Bit Magazine";
+    content: "WhiteMountainHorseProperty.com — Published by Bridle & Bit Magazine";
     display: block;
     font-size: 8pt;
     color: #666;
